@@ -9,3 +9,14 @@
 
 3. **Nou Tipus de Square codi**
     - Debugar nou tipus codi
+
+4. **Afegir sons**
+    - Soundtrack
+    - So quan s'interactua amb alguna cosa
+    - Sonidos puntuales en momentos concretos
+    - Posibles cambios de soundtrack
+
+    - lowercase y .strip() a los passwords
+    - ESC te echa de los squares. Imagenes con esc, space y enter.
+    - Arreglar col·lisions paraigües
+    - Mirar si en un altre ordinador funciona

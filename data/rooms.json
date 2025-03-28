@@ -25,7 +25,7 @@
             [240, 450, 20, 80, "Acabo de hacer la cama, no la quiero destrozar", []],
             [135, 410, 105, 20, "Acabo de hacer la cama, no la quiero destrozar", []],
             [55, 410, 60, 20, "Mi novio menor :3", []],
-            [0, 285, 35, 80, "Me amas. Encu\u00E9ntrame en ambos mundos", [0, 1, 2]],
+            [0, 285, 35, 80, "Me amas. Encu\u00E9ntrame en ambos mundos. Dame tu nombre.", [0, 1, 2]],
             [70, 315, 65, 20, "Popipo", []],
             [155, 315, 80, 20, "Miauuuuuu", []],
             [365, 515, 90, 20, "Mi albino favorito.", []],
@@ -36,10 +36,10 @@
         ],
         "yellow_squares": [],
         "red_squares": [
-            [325, 335, 40, 40, "code1", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
-            [420, 335, 40, 40, "code1", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
+            [325, 335, 40, 40, "4803", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
+            [420, 335, 40, 40, "4803", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
             [0, 285, 35, 80, "si", "*ce muri\u00F3*", "Dar coraz\u00F3n (si/no)?", [2, 3]],
-            [0, 285, 35, 80, "4", "Me amas. Encu\u00E9ntrame en ambos mundos", "C\u00F3digo corazoncil:", [0, 1, 3], 3],
+            [0, 285, 35, 80, "4", "Me amas. Encu\u00E9ntrame en ambos mundos. Dame tu nombre.", "C\u00F3digo corazoncil:", [0, 1, 3], 3],
             [545, 360, 20, 50, "03044", "El c\u00F3digo es 4: La respuesta est\u00E1 en tú coraz\u00F3n. No, mejor dicho, en alguien que lo quiere.", "C\u00F3digo botellil:", [0, 2, 3], 2]
         ]
     },
@@ -68,7 +68,7 @@
         ],
         "green_squares": [
             [70, 485, 240, 50, "Como lo toque, mam\u00E1 me mata.", [4]],
-            [70, 485, 240, 50, "Fin del juego.", [0, 1, 2, 3]],
+            [70, 485, 240, 50, "Casi aciertas, piensa mejor.", [0, 1, 2, 3]],
             [525, 355, 20, 55, "Tremendo plato de macarrones, voy a cagar en un rato.", []],
             [370, 465, 100, 20, "Porqu\u00E9 hay un papel que dice \"insertar texto?\"", []],
             [330, 195, 35, 20, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis dolor dui. Ut feugiat lectus vel tristique commodo. Quisque vel elit a dui vehicula congue. Cras a consectetur nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam consectetur diam placerat, tristique ipsum ut, tristique turpis. Sed metus urna, scelerisque vel nisi sit amet, pulvinar luctus purus.", []],
@@ -98,14 +98,14 @@
             [330, 535, 20, 105, "No es la hora de notificar, si me mojo las manos me llamar\u00E1n?", []],
             [490, 335, 155, 20, "PALITOS CON NUTELA", []],
             [500, 210, 125, 20, "No, soy introvertida.", []],
-            [700, 210, 20, 145, "Ni de co\u00F1a me pongo ahora a hacer bici est\u00E1tica.", [], 3],
-            [425, 170, 40, 65, "C\u00F3digo final: code3 (Tengo cosas en com\u00FAn con el hombre paraguas; ambos tenemos el mismo color y es peligroso tocarnos)", [0, 1, 2, 3]]
+            [700, 210, 20, 145, "Ni de co\u00F1a me pongo ahora a hacer bici est\u00E1tica.", []],
+            [425, 170, 40, 65, "Tengo cosas en com\u00FAn con el hombre paraguas; ambos tenemos el mismo color y es peligroso tocarnos", [0, 1, 2, 3]]
         ],
         "yellow_squares": [
             [70, 385, 30, 230, "data/textures/photos/pointing-mirror-guy.png", []]
         ],
         "red_squares": [
-            [425, 170, 40, 65, "code2", "C\u00F3digo final: code3 (Tengo cosas en com\u00FAn con el hombre paraguas; ambos tenemos el mismo color y es peligroso tocarnos)", "C\u00F3digo umbril:", [0, 1, 2, 4], 4]
+            [425, 170, 40, 65, "babygirl", "Tengo cosas en com\u00FAn con el hombre paraguas; ambos tenemos el mismo color y es peligroso tocarnos", "C\u00F3digo umbril:", [0, 1, 2, 4], 4]
         ]
     }
 }
