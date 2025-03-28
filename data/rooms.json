@@ -40,7 +40,7 @@
             [420, 335, 40, 40, "4803", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
             [0, 285, 35, 80, "si", "*ce muri\u00F3*", "Dar coraz\u00F3n (si/no)?", [2, 3]],
             [0, 285, 35, 80, "4", "Me amas. Encu\u00E9ntrame en ambos mundos. Dame tu nombre.", "C\u00F3digo corazoncil:", [0, 1, 3], 3],
-            [545, 360, 20, 50, "03044", "El c\u00F3digo es 4: La respuesta est\u00E1 en tú coraz\u00F3n. No, mejor dicho, en alguien que lo quiere.", "C\u00F3digo botellil:", [0, 2, 3], 2]
+            [545, 360, 20, 50, "03044", "El c\u00F3digo es 4: La respuesta est\u00E1 en t\u00FA coraz\u00F3n. No, mejor dicho, en alguien que lo quiere.", "C\u00F3digo botellil:", [0, 2, 3], 2]
         ]
     },
     "Comedor": {
@@ -88,8 +88,8 @@
         "invisible_rects": [
             [0, 0, 720, 135],
             [350, 355, 370, 285],
-            [0, 385, 70, 230]
-
+            [0, 385, 70, 230],
+            [425, 135, 40, 35]
         ],
         "blue_squares": [
             [0, 205, 25, 100, "Comedor", 640, 550, []]

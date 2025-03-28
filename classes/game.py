@@ -33,6 +33,27 @@ class Game:
         self.correct_next_state = None
         self.code_prompt = ""
         self.correct_image_path = ""
+        self.sound_enabled = True  # Variable para rastrear si el sonido está activado
+        self.volume = 0.5  # Volumen inicial (50%)
+        pygame.mixer.music.set_volume(self.volume)
+
+        # Cargar el sonido de interacción
+        self.interaction_sound = pygame.mixer.Sound("data\\interaction_sound.mp3")
+
+        # Playlist de música
+        self.playlist = [
+            "data\\music\\LostAtASleepover.mp3",
+            "data\\music\\WhereWeUsedToPlay.mp3",
+            "data\\music\\PocketMirrorGaze.mp3"
+        ]
+        self.current_track_index = 0
+        self.setup_music()
+
+    def setup_music(self):
+        if self.sound_enabled:
+            pygame.mixer.music.load(self.playlist[self.current_track_index])
+            pygame.mixer.music.set_endevent(pygame.USEREVENT + 1)
+            pygame.mixer.music.play()
 
     def wrap_text(self, text, max_length):
         words = text.split()
@@ -61,11 +82,40 @@ class Game:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+            elif event.type == pygame.USEREVENT + 1:  # Event triggered when a track ends
+                self.current_track_index = (self.current_track_index + 1) % len(self.playlist)
+                if self.sound_enabled:
+                    pygame.mixer.music.load(self.playlist[self.current_track_index])
+                    pygame.mixer.music.play()
             elif event.type == pygame.KEYDOWN:
-                if self.showing_code_input or self.showing_image:
+                if event.key == pygame.K_m:  # Tecla para silenciar o activar el sonido
+                    self.sound_enabled = not self.sound_enabled
+                    if self.sound_enabled:
+                        pygame.mixer.music.unpause()
+                    else:
+                        pygame.mixer.music.pause()
+                elif event.key == pygame.K_MINUS:  # Tecla para bajar el volumen
+                    self.volume = max(0.0, self.volume - 0.1)  # No bajar de 0%
+                    pygame.mixer.music.set_volume(self.volume)
+                elif event.key == pygame.K_PLUS:  # Tecla para subir el volumen
+                    self.volume = min(1.0, self.volume + 0.1)  # No subir de 100%
+                    pygame.mixer.music.set_volume(self.volume)
+                elif event.key == pygame.K_p:  # Tecla para pasar a la siguiente canción
+                    self.current_track_index = (self.current_track_index + 1) % len(self.playlist)
+                    if self.sound_enabled:
+                        pygame.mixer.music.load(self.playlist[self.current_track_index])
+                        pygame.mixer.music.play()
+                elif event.key == pygame.K_ESCAPE:
+                    # Salir de cualquier interacción
+                    self.showing_code_input = False
+                    self.showing_image = None
+                    self.showing_text = False
+                    self.immobilized = False
+                    self.input_code = ""
+                elif self.showing_code_input or self.showing_image:
                     if event.key == pygame.K_RETURN:
                         print(self.input_code + " " + self.correct_code)
-                        if self.input_code == self.correct_code:
+                        if self.input_code.strip().lower() == self.correct_code.strip().lower():
                             if self.correct_image:
                                 self.showing_image = pygame.transform.scale(self.correct_image, (self.width - 100, self.height - 100))
                             else:
@@ -92,7 +142,7 @@ class Game:
                     self.showing_text = False
                     self.immobilized = False
                     self.space_pressed = True
-
+                    
     def update(self):
         keys = pygame.key.get_pressed()
         self.character.update(keys, self.width, self.height, self.room.invisible_rects, self.immobilized)
@@ -107,6 +157,8 @@ class Game:
                     if square["next_state"] is not None:
                         self.state = square["next_state"]
                         self.room.set_background(self.state)
+                    # Reproducir sonido de interacción
+                    self.interaction_sound.play()
                     break
             else:
                 for square in self.room.yellow_squares:
@@ -116,6 +168,8 @@ class Game:
                         if square["next_state"] is not None:
                             self.state = square["next_state"]
                             self.room.set_background(self.state)
+                        # Reproducir sonido de interacción
+                        self.interaction_sound.play()
                         break
                     elif keys[pygame.K_SPACE] and self.showing_image:
                         self.showing_image = None
@@ -132,6 +186,8 @@ class Game:
                             self.correct_next_state = square["next_state"] if square["next_state"] else self.state
                             self.code_prompt = square["code_prompt"]
                             self.immobilized = True
+                            # Reproducir sonido de interacción
+                            self.interaction_sound.play()
                             break
                     else:
                         for square in self.room.green_squares:
@@ -144,6 +200,8 @@ class Game:
                                 if square["next_state"] is not None:
                                     self.state = square["next_state"]
                                     self.room.set_background(self.state)
+                                # Reproducir sonido de interacción
+                                self.interaction_sound.play()
                                 break
 
         self.space_pressed = keys[pygame.K_SPACE]

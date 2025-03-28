@@ -66,13 +66,13 @@ class Room:
     def draw(self, window):
         if self.current_background:
             window.blit(self.current_background, (0, 0))
-        # for rect in self.invisible_rects:
-        #     pygame.draw.rect(window, (255, 0, 0), rect, 1)
-        # for square in self.blue_squares:
-        #     pygame.draw.rect(window, (0, 0, 255), square["rect"])
-        # for square in self.green_squares:
-        #     pygame.draw.rect(window, (0, 255, 0), square["rect"])
-        # for square in self.yellow_squares:
-        #     pygame.draw.rect(window, (255, 255, 0), square["rect"])
-        # for square in self.red_squares:
-        #     pygame.draw.rect(window, (255, 0, 0), square["rect"])
+        for rect in self.invisible_rects:
+            pygame.draw.rect(window, (255, 0, 0), rect, 1)
+        for square in self.blue_squares:
+            pygame.draw.rect(window, (0, 0, 255), square["rect"])
+        for square in self.green_squares:
+            pygame.draw.rect(window, (0, 255, 0), square["rect"])
+        for square in self.yellow_squares:
+            pygame.draw.rect(window, (255, 255, 0), square["rect"])
+        for square in self.red_squares:
+            pygame.draw.rect(window, (255, 0, 0), square["rect"])
