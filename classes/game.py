@@ -38,16 +38,22 @@ class Game:
         pygame.mixer.music.set_volume(self.volume)
 
         # Cargar el sonido de interacción
-        self.interaction_sound = pygame.mixer.Sound("data\\interaction_sound.mp3")
+        self.interaction_sound = pygame.mixer.Sound("data\\sounds\\\\interaction_sound.mp3")
 
         # Playlist de música
         self.playlist = [
-            "data\\music\\LostAtASleepover.mp3",
-            "data\\music\\WhereWeUsedToPlay.mp3",
-            "data\\music\\PocketMirrorGaze.mp3"
+            "data\\sounds\\\\music\\LostAtASleepover.mp3",
+            "data\\sounds\\\\music\\WhereWeUsedToPlay.mp3",
+            "data\\sounds\\\\music\\PocketMirrorGaze.mp3"
         ]
         self.current_track_index = 0
         self.setup_music()
+
+        # Intro screen variables
+        self.intro_message = "Oh, me ha llegado un \nnuevo mensaje de discord"
+        self.intro_font = pygame.font.Font("data\\fonts\\Ticketing.ttf", 48)
+        self.intro_duration = 3000  # Duration of the intro in milliseconds
+        self.fade_duration = 1000  # Duration of the fade-out in milliseconds
 
     def setup_music(self):
         if self.sound_enabled:
@@ -69,7 +75,43 @@ class Game:
             lines.append(current_line)
         return lines
 
+    def show_intro(self):
+        intro_surface = pygame.Surface((self.width, self.height))
+        intro_surface.fill((0, 0, 0))
+        
+        # Split the intro message into two lines
+        lines = self.intro_message.split("\n")
+        text_surfaces = [self.intro_font.render(line, True, (255, 255, 255)) for line in lines]
+        total_height = sum(surface.get_height() for surface in text_surfaces) + 10  # Add spacing between lines
+
+        y_offset = (self.height - total_height) // 2
+        for text_surface in text_surfaces:
+            text_rect = text_surface.get_rect(center=(self.width // 2, y_offset + text_surface.get_height() // 2))
+            intro_surface.blit(text_surface, text_rect)
+            y_offset += text_surface.get_height() + 10  # Move to the next line with spacing
+
+        start_time = pygame.time.get_ticks()
+        while True:
+            elapsed_time = pygame.time.get_ticks() - start_time
+            if elapsed_time > self.intro_duration + self.fade_duration:
+                break
+
+            alpha = 255
+            if elapsed_time > self.intro_duration:
+                alpha = max(0, 255 - int(255 * (elapsed_time - self.intro_duration) / self.fade_duration))
+            intro_surface.set_alpha(alpha)
+
+            self.window.fill((0, 0, 0))
+            self.window.blit(intro_surface, (0, 0))
+            pygame.display.flip()
+
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+
     def run(self):
+        self.show_intro()  # Show the intro screen before starting the game loop
         while self.running:
             self.handle_events()
             self.update()

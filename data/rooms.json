@@ -25,7 +25,7 @@
             [240, 450, 20, 80, "Acabo de hacer la cama, no la quiero destrozar", []],
             [135, 410, 105, 20, "Acabo de hacer la cama, no la quiero destrozar", []],
             [55, 410, 60, 20, "Mi novio menor :3", []],
-            [0, 285, 35, 80, "Me amas. Encu\u00E9ntrame en ambos mundos. Dame tu nombre.", [0, 1, 2]],
+            [0, 285, 35, 80, "Mr. Bujero: Me amas. Encu\u00E9ntrame en ambos mundos.", [0, 1, 2]],
             [70, 315, 65, 20, "Popipo", []],
             [155, 315, 80, 20, "Miauuuuuu", []],
             [365, 515, 90, 20, "Mi albino favorito.", []],
@@ -38,8 +38,8 @@
         "red_squares": [
             [325, 335, 40, 40, "4803", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
             [420, 335, 40, 40, "4803", "El tiempo te dar\u00E1 las respuestas (mundo real)", "C\u00F3digo de discord:", [1, 2, 3], 1],
-            [0, 285, 35, 80, "si", "*ce muri\u00F3*", "Dar coraz\u00F3n (si/no)?", [2, 3]],
-            [0, 285, 35, 80, "4", "Me amas. Encu\u00E9ntrame en ambos mundos. Dame tu nombre.", "C\u00F3digo corazoncil:", [0, 1, 3], 3],
+            [0, 285, 35, 80, "si", "*ce muri\u00F3*", "Mr. Bujero: Me das tu coraz\u00F3n (si/no)?", [2, 3]],
+            [0, 285, 35, 80, "4", "Mr. Bujero: Me amas. Encu\u00E9ntrame en ambos mundos.", "C\u00F3digo corazoncil:", [0, 1, 3], 3],
             [545, 360, 20, 50, "03044", "El c\u00F3digo es 4: La respuesta est\u00E1 en t\u00FA coraz\u00F3n. No, mejor dicho, en alguien que lo quiere.", "C\u00F3digo botellil:", [0, 2, 3], 2]
         ]
     },
