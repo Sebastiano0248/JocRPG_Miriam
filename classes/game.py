@@ -268,6 +268,11 @@ class Game:
             self.window.blit(self.showing_image, img_rect.topleft)
         if self.showing_code_input:
             self.window.blit(self.text_bubble, (30, 30))
-            code_surface = self.font.render(f"{self.code_prompt} {self.input_code}", True, (0, 0, 0))
-            self.window.blit(code_surface, (50, 50))
+            prompt_text = f"{self.code_prompt} {self.input_code}"
+            lines = self.wrap_text(prompt_text, 55)
+            y_offset = 50
+            for line in lines:
+                code_surface = self.font.render(line, True, (0, 0, 0))
+                self.window.blit(code_surface, (50, y_offset))
+                y_offset += 30
         pygame.display.flip()
